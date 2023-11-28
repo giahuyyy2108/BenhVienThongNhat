@@ -89,9 +89,10 @@ class Header {
 				if ($check > 0) {
 					$data = $result->fetch_array(); /*lấy dữ liệu tương ứng với username và password nhập*/
 					$_SESSION['user'] = $data; /*lưu session*/
-					$a = $data->user_name;
-					echo "<script>console.log('$a')</script>";
-					// header('Location: ./');
+					echo "<script>console.log('$data')</script>";
+
+					///bug
+					// Header('Location: ./');
 				} else {
 					echo "<script>alert('Sai mật khẩu hoặc tên đăng nhập')</script>";
 				}
