@@ -186,7 +186,7 @@
                                                     <li>
                                                         <button type="button" class="login-btn">
                                                             <i class="fa fa-user" aria-hidden="true"></i>
-                                                            <?=$_SESSION['user']['username']?>
+                                                            <?=$_SESSION['user']['user_name']?>
                                                         </button>
                                                     </li>
                                                     <li>
@@ -315,12 +315,12 @@
                             <div class="title-login-form">Đăng ký </div>
                         </div>
                         <div class="modal-body">
-                        <div class="login-form">
-                                <form method="post">
+                            <div class="login-form">
+                            <form method="post">
                                     <label>Tên đăng nhập *</label>
                                     <input type="text" name="username" placeholder="Tên đăng nhập" />
                                     <label>Mật khẩu *</label>
-                                    <input type="password" name="password" placeholder="Mật khẩu" />
+                                    <input type="password" name="password" placeholder="Mật khẩu" autocomplete="on"/>
                                     <label>Họ và tên *</label>
                                     <input type="text" name="full_name" placeholder="Họ tên" />
                                     <label>Số điện thoại *</label>

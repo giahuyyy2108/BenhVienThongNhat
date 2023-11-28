@@ -7,6 +7,7 @@ class Header {
 
 		$userModel = new UserModel();
 		$error = $this->signUp($userModel);
+		$errorLogin = $this->login($userModel);
 
 		require('View/client/layouts/header.php');
 	}
@@ -83,11 +84,14 @@ class Header {
 			/**
 		    * Nếu số dòng trong database > 0 => lưu session + lấy dữ liệu + chuyển hướng
 		    * Ngược lại thông báo alert bằng script
+		    * @var array
 		    */
 				if ($check > 0) {
 					$data = $result->fetch_array(); /*lấy dữ liệu tương ứng với username và password nhập*/
 					$_SESSION['user'] = $data; /*lưu session*/
-					header('Location: ./');
+					$a = $data->user_name;
+					echo "<script>console.log('$a')</script>";
+					// header('Location: ./');
 				} else {
 					echo "<script>alert('Sai mật khẩu hoặc tên đăng nhập')</script>";
 				}
