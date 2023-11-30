@@ -40,7 +40,7 @@
     </head>
 
     <body>
-        <div id="preloader"></div>
+        <!-- <div id="preloader"></div> -->
         <?php  
             if (isset($error['username'])) {?>
                 <div class="alert alert-danger" style="top: 155px; position: absolute; z-index: 5; width: auto; right: 0px;" role="alert">

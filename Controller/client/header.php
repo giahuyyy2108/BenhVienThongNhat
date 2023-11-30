@@ -13,6 +13,7 @@ class Header {
 	}
 
 	public function signUp($userModel) {
+
 		$username = $password = $fullName = $sdt = $email = NULL;
 		$error = array();
 		$error['username'] = $error['password'] = $error['full_name'] = $error['email']=$error['sdt'] = $error['username_exist'] = NULL;
@@ -62,6 +63,9 @@ class Header {
 
 	public function login($userModel)
 	{
+		// //bug
+		// session_start();
+
 		$username = $password = $fullName = NULL;
 		$error = array();
 		$error['username'] = $error['password'] = NULL;
@@ -89,10 +93,13 @@ class Header {
 				if ($check > 0) {
 					$data = $result->fetch_array(); /*lấy dữ liệu tương ứng với username và password nhập*/
 					$_SESSION['user'] = $data; /*lưu session*/
-					echo "<script>console.log('$data')</script>";
+					// echo "<script>alert('Dang nhap thanh cong')</script>";
+                    echo "<script>console.log(".json_encode($_SESSION['user']).")</script>";
+
 
 					///bug
-					// Header('Location: ./');
+					Header('Location: ./',true,301); 
+
 				} else {
 					echo "<script>alert('Sai mật khẩu hoặc tên đăng nhập')</script>";
 				}

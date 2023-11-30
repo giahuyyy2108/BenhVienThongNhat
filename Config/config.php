@@ -1,4 +1,4 @@
 <?php
-    define('admin',0);
-    define('user',1);
+    define('admin',1);
+    define('client',0);
 ?>
